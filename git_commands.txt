@@ -1,0 +1,78 @@
+============================================================
+       Git Commands Used in the BookHaven Project
+============================================================
+
+1. git init
+   - Initializes a new Git repository in the current directory.
+   - Creates a hidden .git/ folder to track all version history and configuration.
+
+2. git branch -M main
+   - Renames the current active branch to "main".
+   - Used to follow modern Git naming conventions replacing legacy "master".
+
+3. git config user.name "Name"
+   - Sets the author name that will appear in every commit made in this repository.
+   - Use --global flag to apply across all repositories on the system.
+
+4. git config user.email "email"
+   - Sets the author email that will be associated with every commit made.
+   - Use --global flag to apply across all repositories on the system.
+
+5. git add <file>
+   - Stages the specified file(s) into the index (staging area) for the next commit.
+   - Example: git add index.html
+   - Use "git add ." to stage all modified and new files at once.
+
+6. git commit -m "message"
+   - Records the staged snapshot permanently into the repository history.
+   - The -m flag lets you write the commit message inline.
+   - Example: git commit -m "Initial commit: add index.html and about.html"
+
+7. git checkout -b feature
+   - Creates a new branch named "feature" and immediately switches to it.
+   - Equivalent to running: git branch feature && git checkout feature
+
+8. git checkout main
+   - Switches the working directory and HEAD pointer back to the "main" branch.
+   - Restores all files to match the state of the last commit on "main".
+
+9. git merge feature
+   - Merges all commits from the "feature" branch into the currently checked-out branch.
+   - If no conflicts exist, Git performs a fast-forward or auto merge.
+
+10. git log --oneline --graph --all
+    - Displays the full commit history as a compact, ASCII-art branch graph.
+    - --oneline: Shows each commit on a single line (short hash + message).
+    - --graph:   Renders the branching structure visually.
+    - --all:     Includes commits from all branches, not just the current one.
+
+11. git status
+    - Shows the current state of the working directory and staging area.
+    - Reports modified, staged, untracked, and gitignored files.
+
+12. git revert HEAD --no-edit
+    - Safely undoes the most recent commit by creating a NEW inverse commit.
+    - Does NOT rewrite or delete history — safe for shared/public branches.
+    - --no-edit: Skips opening a text editor for the revert commit message.
+
+13. git remote add origin <url>
+    - Links the local repository to a remote repository hosted on GitHub.
+    - Example: git remote add origin https://github.com/username/BookHaven.git
+
+14. git push -u origin main
+    - Uploads local commits on "main" to the remote GitHub repository.
+    - -u sets "origin main" as the default upstream for future git push/pull calls.
+
+============================================================
+       .gitignore Rules Used
+============================================================
+
+*.log
+   - Excludes all files ending in ".log" (e.g., debug.log, error.log).
+   - Prevents cluttering the repository with runtime log output.
+
+temp/
+   - Excludes the entire temp/ directory and all files contained within it.
+   - Useful for ignoring build caches, temporary downloads, or scratch files.
+
+============================================================
